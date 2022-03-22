@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;500;700&family=Bebas+Neue&family=Montserrat:wght@100;400;700&family=Quicksand:wght@300&family=Titillium+Web&display=swap" rel="stylesheet">
+        <script>
+            var client = new XMLHttpRequest();
+            var client2 = new XMLHttpRequest();
+            client.open('GET', "WS_Docs/sample.txt");
+            client2.open('GET', "WS_Docs/sample2.txt");
+            client.onreadystatechange = function() {
+                document.getElementById("text1").innerHTML = client.responseText;
+            }
+            client2.onreadystatechange = function() {
+                document.getElementById("text2").innerHTML = client2.responseText;
+            }
+            client.send();
+            client2.send();
+
+/*
+            $(document).ready(function(){
+                var element = document.querySelector(".jumbotron");
+                var test1 = $(".aboutBox").height();
+                console.log("height:", test1);
+                var test2 = element.scrollHeight;
+                console.log("scrollHeight:", test2);
+
+                if (test1 < test2) {
+                    console.log("element is overflowing");
+                }
+                else {
+                    console.log("element is NOT overflowing");
+                }
+            });
+*/
+        </script>
+        <style>
+            @media (max-width: 380px) {
+                .aboutBox {
+                    font-size: 90%;
+                }
+            }
+        </style>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About</title>
+    </head>
+    <body>
+        <div>
+            <nav class="navbar navbar-expand-lg bg-transparent navbar-light">
+                <a class="navbar-brand strokeme" href="index.html">LORENZO ARRITOLA</a>
+                <div class="pageNameContainer">
+                    <div class="container" id="pageTitleBox">
+                        <span class="navbar-text">
+                            About
+                        </span>
+                    </div>
+                </div>
+                <button id="navbarButton" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarToggler">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Projects</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="video_editing.html">Video Editing</a>
+                                <a class="dropdown-item" href="motion_graphics.html">Motion Graphics</a>
+                                <a class="dropdown-item" href="graphic_design.html">Graphic Design</a>
+                                <a class="dropdown-item" href="photography.html">Photography</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div>
+            <div class="container">
+                <div class="jumbotron aboutBox mt-5">
+                    <div class="aboutText">
+                        <h1>About</h1>
+                        <br>
+
+                        <p id="text1">text</p>
+                        <p id="text2">text</p>
+                        <br>
+
+                        <p><a href="WS_Docs/LorenzoArritola_Resume.pdf">Click here to view resume!</a></p>
+                        <p><a href="https://www.imdb.com/name/nm9647323/?ref_=nv_sr_1">IMDb</a></p>
+                        <p><a href="https://www.linkedin.com/in/larritola1-b093a215b">LinkedIn</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
