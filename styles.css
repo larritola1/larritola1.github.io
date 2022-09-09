@@ -337,6 +337,11 @@
 .aboutText {
     text-align: center;
     font-size: 100%;
+    font-family: "Montserrat", sans-serif;
+}
+
+.aboutText h1{
+    font-weight: bold;
 }
 
 .box {
